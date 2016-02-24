@@ -18,3 +18,18 @@ new Foo().getName(); //3 ---Foo构造出的实例对象想要访问getName
 new new Foo().getName(); //3
 
 //总之，一定要弄清楚，访问的是谁的函数，谁的属性，函数调用没，函数返回什么;函数是执行调用的，还是当构造函数调用的；
+
+
+//测变量覆盖情况
+function person(){
+    console.log("person");
+}
+console.log(person);
+
+var person = 2;
+console.log(person);
+
+var person = function human(){
+    console.log("human");
+};
+console.log(person);      //person变量每次都会被覆盖掉。
